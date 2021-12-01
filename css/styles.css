@@ -1,6 +1,7 @@
 :root {
 	--primary-paragraph-color: #757575;
 	--primary-active-color: #2196f3;
+	--secondary-button-color: #188ce8;
 	--secondary-logo-color: #000000;
 	--primary-header-color: #212121;
 	--primary-text-color-light: #ffffff;
@@ -285,7 +286,8 @@ img {
 }
 
 .btn-hero,
-.btn-subscribe {
+.btn-subscribe,
+.btn-modal {
 	width: 200px;
 	height: 50px;
 	padding-top: 10px;
@@ -316,8 +318,10 @@ img {
 }
 
 .btn-hero:hover,
-.btn-hero:focus {
-	background-color: #188ce8;
+.btn-hero:focus,
+.btn-modal:hover,
+.btn-modal:focus {
+	background-color: var(--secondary-button-color);
 }
 
 /*Our characteristics*/
@@ -792,6 +796,10 @@ img {
 	-o-transition: transform var(--first-transition-timing);
 }
 
+.modal-callback {
+	text-align: center;
+}
+
 .modal-title {
 	margin-bottom: 12px;
 	font-weight: 700;
@@ -807,6 +815,19 @@ img {
 	position: relative;
 	margin-bottom: 10px;
 	height: 58px;
+}
+
+.form-field-comment {
+	position: relative;
+	margin-bottom: 20px;
+	height: 138px;
+}
+
+.form-field-policy {
+	position: relative;
+	display: flex;
+	flex-direction: row-reverse;
+	margin-bottom: 40px;
 }
 
 .form-label {
@@ -828,6 +849,8 @@ img {
 	left: 15px;
 	width: 18px;
 	height: 18px;
+	fill: var(--primary-header-color);
+
 	transform: translateY(50%);
 	-webkit-transform: translateY(50%);
 	-moz-transform: translateY(50%);
@@ -859,10 +882,38 @@ img {
 .form-input:focus,
 .form-input:active {
 	border: 1px solid var(--primary-active-color);
+	outline: transparent;
+}
+
+.form-input.comment {
+	padding: 12px 16px;
+	height: 120px;
+	resize: none;
 }
 
 .form-input:focus ~ .form-icon {
 	fill: var(--primary-active-color);
+}
+
+.form-field-policy .form-label {
+	font-size: 14px;
+	line-height: 1.71;
+}
+
+.form-field-policy .form-input.comment::placeholder {
+	font-family: Roboto;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.01em;
+	color: rgba(117, 117, 117, 0.5);
+}
+
+.form-field-policy .form-label .link {
+	color: var(--primary-active-color);
+	text-decoration-line: underline;
+	-moz-text-decoration-line: underline;
+	text-decoration-skip-ink: none;
 }
 
 .modal-close {
@@ -883,6 +934,11 @@ img {
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	-o-border-radius: 50%;
+}
+
+.modal-close:hover .icon-close-modal,
+.modal-close:focus .icon-close-modal {
+	fill: var(--primary-active-color);
 }
 
 .icon-close-modal {
