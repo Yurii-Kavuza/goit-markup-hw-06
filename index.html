@@ -388,13 +388,16 @@
 						<textarea name="comment" id="comment" class="form-input comment" placeholder="Введите текст"></textarea>
 						<label for="email" class="form-label">Комментарий</label>
 					</div>
-					<div class="form-field-policy">
-						<input type="checkbox" name="policy-agreement" id="policy-agreement" class="form-input" />
-						<label for="policy-agreement" class="form-label">
+					<label class="form-field-policy">
+						<input type="checkbox" name="policy-agreement" id="policy-agreement" class="form-input-checkbox" />
+						<span for="policy-agreement" class="form-label">
 							Соглашаюсь с рассылкой и принимаю
 							<a href="" class="link">Условия договора</a>
-						</label>
-					</div>
+						</span>
+						<svg class="form-icon-checkbox">
+							<use href="./images/icons.svg#icon-check"></use>
+						</svg>
+					</label>
 					<button type="submit" class="btn-modal">Отправить</button>
 				</form>
 				<button type="button" class="modal-close" data-modal-close>

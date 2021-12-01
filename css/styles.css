@@ -820,8 +820,8 @@ img {
 
 .form-field-policy {
 	position: relative;
-	display: flex;
-	flex-direction: row-reverse;
+	display: block;
+	height: 24px;
 	margin-bottom: 40px;
 }
 
@@ -895,17 +895,47 @@ img {
 }
 
 .form-field-policy .form-label {
+	top: 12px;
+	left: 36px;
 	font-size: 14px;
 	line-height: 1.71;
+
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 }
 
-.form-field-policy .form-input.comment::placeholder {
-	font-family: Roboto;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.01em;
-	color: rgba(117, 117, 117, 0.5);
+.form-icon-checkbox {
+	position: absolute;
+	top: 12px;
+	left: 13px;
+	width: 16px;
+	height: 16px;
+	border: 2px solid var(--primary-header-color);
+	border-radius: var(--main-border-radius);
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-webkit-border-radius: var(--main-border-radius);
+	-moz-border-radius: var(--main-border-radius);
+	-ms-border-radius: var(--main-border-radius);
+	-o-border-radius: var(--main-border-radius);
+}
+
+.form-input-checkbox:checked ~ .form-icon-checkbox {
+	border: 2px solid var(--primary-active-color);
+	background-color: var(--primary-active-color);
+	background-size: contain;
+	background-origin: border-box;
+}
+
+.form-input-checkbox {
+	appearance: none;
+	position: absolute;
 }
 
 .form-field-policy .form-label .link {
