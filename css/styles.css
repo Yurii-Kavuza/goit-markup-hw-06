@@ -748,11 +748,16 @@ img {
 	height: 100vh;
 	width: 100vw;
 	background-color: rgba(0, 0, 0, 0.2);
-	transition: opacity var(--first-transition-duration), visibility var(--first-transition-function);
-	-webkit-transition: opacity var(--first-transition-duration), visibility var(--first-transition-function);
-	-moz-transition: opacity var(--first-transition-duration), visibility var(--first-transition-function);
-	-ms-transition: opacity var(--first-transition-duration), visibility var(--first-transition-function);
-	-o-transition: opacity var(--first-transition-duration), visibility var(--first-transition-function);
+	transition: opacity var(--first-transition-duration) var(--first-transition-function),
+		visibility var(--first-transition-duration) var(--first-transition-function);
+	-webkit-transition: opacity var(--first-transition-duration) var(--first-transition-function),
+		visibility var(--first-transition-duration) var(--first-transition-function);
+	-moz-transition: opacity var(--first-transition-duration) var(--first-transition-function),
+		visibility var(--first-transition-duration) var(--first-transition-function);
+	-ms-transition: opacity var(--first-transition-duration) var(--first-transition-function),
+		visibility var(--first-transition-duration) var(--first-transition-function);
+	-o-transition: opacity var(--first-transition-duration) var(--first-transition-function),
+		visibility var(--first-transition-duration) var(--first-transition-function);
 }
 
 .backdrop.is-hidden .modal {
@@ -823,7 +828,7 @@ img {
 .form-field-policy {
 	position: relative;
 	display: block;
-	flex-direction: row-reverse;
+	height: 24px;
 	margin-bottom: 40px;
 }
 
@@ -936,18 +941,23 @@ img {
 	fill: var(--primary-active-color);
 }
 
-.form-field-policy .form-label {
+.form-field-policy .form-label-policy {
+	position: absolute;
+	left: 36px;
 	font-size: 14px;
 	line-height: 1.71;
 }
 
-.form-field-policy .form-input.comment::placeholder {
-	font-family: Roboto;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 1.14;
-	letter-spacing: 0.01em;
-	color: rgba(117, 117, 117, 0.5);
+.form-field-policy .form-input {
+	appearance: none;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border: none;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 }
 
 .form-field-policy .form-label .link {
@@ -955,6 +965,32 @@ img {
 	text-decoration-line: underline;
 	-moz-text-decoration-line: underline;
 	text-decoration-skip-ink: none;
+}
+
+.form-field-policy .checkbox-icon {
+	position: absolute;
+	top: 50%;
+	left: 13px;
+	display: block;
+	height: 16px;
+	width: 16px;
+	border: 2px solid var(--primary-header-color);
+	border-radius: var(--main-border-radius);
+	-webkit-border-radius: var(--main-border-radius);
+	-moz-border-radius: var(--main-border-radius);
+	-ms-border-radius: var(--main-border-radius);
+	-o-border-radius: var(--main-border-radius);
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+
+.form-field-policy .form-input:checked ~ .checkbox-icon {
+	background-image: url("../images/icon-11.svg");
+	background-color: var(--primary-active-color);
+	border-color: transparent;
 }
 
 .modal-close {
