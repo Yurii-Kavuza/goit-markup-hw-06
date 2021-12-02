@@ -933,6 +933,13 @@ img {
 	background-origin: border-box;
 }
 
+.form-input-checkbox:hover ~ .form-icon-checkbox,
+.form-input-checkbox:focus ~ .form-icon-checkbox {
+	border: 2px solid var(--primary-active-color);
+	background-size: contain;
+	background-origin: border-box;
+}
+
 .form-input-checkbox {
 	appearance: none;
 	position: absolute;
